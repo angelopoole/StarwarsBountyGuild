@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_21_171413) do
+ActiveRecord::Schema.define(version: 2020_01_21_194537) do
 
   create_table "contracts", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2020_01_21_171413) do
     t.string "planet"
     t.string "species"
     t.string "quote"
+    t.integer "contracts_completed"
+    t.integer "contracts_failed"
   end
 
 end
