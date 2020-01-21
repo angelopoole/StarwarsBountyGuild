@@ -1,15 +1,5 @@
 class HuntersController < ApplicationController
     before_action :find_hunter, only: [:show, :edit, :update, :destroy]
-<<<<<<< HEAD
-    def new
-        
-    end
-
-    def create
-        
-    end
-
-=======
 
     def new
     @hunter = Hunter.new
@@ -38,6 +28,5 @@ class HuntersController < ApplicationController
     def hunter_params
         params.require(:hunter).permit(:name, :planet, :species)
     end
->>>>>>> b0c0504cc51046481b68fd9819b088a0be2e581c
 
 end
