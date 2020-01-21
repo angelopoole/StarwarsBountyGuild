@@ -7,6 +7,15 @@ class HuntersController < ApplicationController
 
     def create
     @hunter = Hunter.create(hunter_params)
+    redirect_to hunter_path(@hunter)
+    end
+    
+    def edit
+        
+    end
+
+    def show
+        
     end
 
     def update
@@ -22,11 +31,11 @@ class HuntersController < ApplicationController
     private
 
     def find_hunter
-    @hunter = hunter.find(params[:id])
+    @hunter = Hunter.find(params[:id])
     end
 
     def hunter_params
-        params.require(:hunter).permit(:name, :planet, :species)
+        params.require(:hunter).permit(:name, :planet, :species, :quote)
     end
 
 end
