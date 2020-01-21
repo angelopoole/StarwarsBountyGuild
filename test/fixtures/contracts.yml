@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  OrganizationName: MyString
+  TargetName: MyString
+  HunterNames: MyString
+  BountyReward: MyString
+  target_id: 1
+  hunter_id: 1
+
+two:
+  OrganizationName: MyString
+  TargetName: MyString
+  HunterNames: MyString
+  BountyReward: MyString
+  target_id: 1
+  hunter_id: 1
