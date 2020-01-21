@@ -1,16 +1,29 @@
 class HunterContractsController < ApplicationController
-    before_action :strong_params, only [:create, :update, :delete]
+    before_action :find_hunter_contract, only [:destroy]
 
     def new 
-        @hunter = Hunter.new
+        @hunter_contract = HunterContract.new
     end
 
     def create
-        @hunter = Hunter.create
-        redirect_to hunter_path(@hunter)
-    private
+        @hunter_contract = HunterContract.create
+        redirect_to contract_path(@hunter_contract.contract)
+    end
 
-    def strong_params
-        params.require(:hunter).permit(:name)
+    def destroy
+        find_hunter_contract.destroy
+        redirect_to contracts_path
+    end
+
+    def index
+        @hunter_contracts = HunterContract.all
+        # 30.times list last method? so it always grabs latest bounty hunter to be added onto hunter_contract.all? 
+        # then just interpolate hunter and contract name onto string
+    end
+
+    private
+    
+    def find_hunter_contract
+        @hunter = Hunter.find(params[:id])
     end
 end
