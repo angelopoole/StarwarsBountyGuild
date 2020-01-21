@@ -1,2 +1,0 @@
-class TargetsController < ApplicationController
-end
