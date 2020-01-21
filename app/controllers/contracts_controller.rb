@@ -5,4 +5,9 @@ class ContractsController < ApplicationController
     @contracts = Contract.all
     end
     
+    private
+
+    def find_contract
+        @contract = Contract.find(params[:id])
+    end
 end
