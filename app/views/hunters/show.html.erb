@@ -1,0 +1,10 @@
+<h1> Hunter stats:</h1>
+<p>
+Name: <%= @hunter.name%><br>
+Quote: <%= @hunter.quote%><br>
+Planet: <%= @hunter.planet%><br>
+Species: <%= @hunter.species%><br>
+
+</p>
+<%= button_to 'Edit your profile', edit_hunter_path(@hunter), method: :get%> <br>
+<%= button_to 'Delete Yourself', hunter_path(@hunter), method: :delete %><br>
