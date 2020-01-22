@@ -1,15 +1,5 @@
 class HuntersController < ApplicationController
     before_action :find_hunter, only: [:show, :edit, :update, :destroy]
-<<<<<<< HEAD
-    def new
-        
-    end
-
-    def create
-        
-    end
-
-=======
 
     def new
     @hunter = Hunter.new
@@ -17,6 +7,15 @@ class HuntersController < ApplicationController
 
     def create
     @hunter = Hunter.create(hunter_params)
+    redirect_to hunter_path(@hunter)
+    end
+    
+    def edit
+        
+    end
+
+    def show
+        
     end
 
     def update
@@ -32,12 +31,11 @@ class HuntersController < ApplicationController
     private
 
     def find_hunter
-    @hunter = hunter.find(params[:id])
+    @hunter = Hunter.find(params[:id])
     end
 
     def hunter_params
-        params.require(:hunter).permit(:name, :planet, :species)
+        params.require(:hunter).permit(:name, :planet, :species, :quote)
     end
->>>>>>> b0c0504cc51046481b68fd9819b088a0be2e581c
 
 end
