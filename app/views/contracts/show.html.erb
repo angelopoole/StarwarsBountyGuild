@@ -1,5 +1,7 @@
 <h1> Contract from the Bounty Guild </h1>
 <h3> This contract has been posted by <%= @contract.drafter %> in the amount of <%= @contract.BountyAmount %> against <%= @contract.name %>.</h3>
+<h2> 
+
 <h1>This contract currently has the following signors:</h1>
 <h1><% @contract.hunters.each do |hunter| %>
 <%= link_to hunter.name, hunter_path(hunter.id) %><hr>

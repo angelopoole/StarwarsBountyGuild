@@ -5,6 +5,21 @@ Quote: <%= @hunter.quote%><br>
 Planet: <%= @hunter.planet%><br>
 Species: <%= @hunter.species%><br>
 
+<h5>This Hunter is feuding with:</h5>
+<% @hunter.contracts.each do |feud| %>
+<% feud.hunters.each do |huntername| %>
+<% if @hunter.name != huntername.name %>
+<%= huntername.name %><br>
+<%end%>
+<%end%>
+<%end%>
+
 </p>
 <%= button_to 'Edit your profile', edit_hunter_path(@hunter), method: :get%> <br>
+<<<<<<< HEAD
 <%= button_to 'Delete Yourself', hunter_path(@hunter), method: :delete, confirm: "are you sure?" %><br>
+=======
+<%= button_to 'Delete Yourself', hunter_path(@hunter), method: :delete %><br>
+
+
+>>>>>>> 4f2c7fed4f693e42bf01f692826b1c76509b847c
