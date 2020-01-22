@@ -1,6 +1,6 @@
 class HunterContractsController < ApplicationController
     before_action :find_hunter_contract, only [:destroy]
-
+#fhgerijfbnfsob
     def new 
         @hunter_contract = HunterContract.new
     end
