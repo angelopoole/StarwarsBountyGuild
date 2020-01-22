@@ -4,6 +4,9 @@ class ContractsController < ApplicationController
     def index
     @contracts = Contract.all
     end
+
+    def show
+    end
     
     private
 

@@ -1,31 +1,6 @@
 class HunterContractsController < ApplicationController
-<<<<<<< HEAD
-    before_action :find_hunter_contract, only [:create, :update, :delete]
-
-    def new 
-        @huntercontract = HunterContract.new
-    end
-
-    def create
-        @huntercontract = HunterContract.create
-        redirect_to contract_path(@huntercontract.contract)
-    end
-
-    def show
-        # @hunter = Hunter.find(params[:id])
-    find_hunter
-    end
-    private
-
-    def find_hunter_contract
-        @hunter = Hunter.find(params[:id])
-    end
-
-    def hunter_contract_params
-        params.require(:hunter).permit(:name)
-=======
-    before_action :find_hunter_contract, only [:destroy]
-
+    before_action :find_hunter_contract, only: [:destroy]
+#fhgerijfbnfsob
     def new 
         @hunter_contract = HunterContract.new
     end
@@ -49,7 +24,6 @@ class HunterContractsController < ApplicationController
     private
     
     def find_hunter_contract
-        @hunter = Hunter.find(params[:id])
->>>>>>> b0c0504cc51046481b68fd9819b088a0be2e581c
+        @hunter_contract = HunterContract.find(params[:id])
     end
 end
