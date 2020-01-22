@@ -40,6 +40,8 @@
     border-radius: 20px;
   }
   body {
-      background-image: url(starwarsBounties.jpeg);
+      /* background-image: url(https://us.123rf.com/450wm/sudowoodo/sudowoodo1606/sudowoodo160600027/58944604-seamless-star-pattern-silver-and-golden-stars-on-black-background-tile-able-texture-.jpg?ver=6); */
+      background-image: url(https://ih1.redbubble.net/image.597565382.3277/flat,1000x1000,075,f.jpg);
       background-position: center;
+      background-repeat: inherit;
   }
