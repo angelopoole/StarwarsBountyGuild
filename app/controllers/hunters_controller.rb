@@ -7,7 +7,7 @@ class HuntersController < ApplicationController
 
     def create
     @hunter = Hunter.create(hunter_params)
-    redirect_to hunter_path(@hunter)
+    redirect_to hunter_path(@hunter.contract.last)
     end
     
     def edit
