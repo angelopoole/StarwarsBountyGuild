@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'hunter_contracts#index'
   resources :contracts
   resources :hunter_contracts
   resources :hunters

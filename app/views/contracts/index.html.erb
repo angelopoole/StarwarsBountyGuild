@@ -1,0 +1,5 @@
+<h1>Bounty Board</h1>
+
+<% @contracts.each do |contracts| %>
+<h4>Name of Target: <%= link_to contracts.name, contract_path(contracts.id)%>. Posted by <%=contracts.drafter%>. Bounty Reward: <%=contracts.BountyAmount%> Republic credits.</h4><hr>
+<%end%>
