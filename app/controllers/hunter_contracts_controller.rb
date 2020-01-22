@@ -1,5 +1,5 @@
 class HunterContractsController < ApplicationController
-    before_action :find_hunter_contract, only [:destroy]
+    before_action :find_hunter_contract, only: [:destroy]
 #fhgerijfbnfsob
     def new 
         @hunter_contract = HunterContract.new
@@ -24,6 +24,6 @@ class HunterContractsController < ApplicationController
     private
     
     def find_hunter_contract
-        @hunter = Hunter.find(params[:id])
+        @hunter_contract = HunterContract.find(params[:id])
     end
 end
