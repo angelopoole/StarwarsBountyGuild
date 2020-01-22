@@ -1,6 +1,8 @@
-<h1> Contract from the Bounty Guild </h1>
-<h3> This contract has been posted by <%= @contract.drafter %> in the amount of <%= @contract.BountyAmount %> against <%= @contract.name %>.</h3>
+<h1> Official Posting of the Bounty Guild </h1>
+<h3> By the authority of the New Republic, this contract is deemed open and legal as released from the Bounty Hunters' Guild. The drafter of this contract, <%= @contract.drafter %> has posted a reward in the amount of <%= @contract.BountyAmount %> against <%= @contract.name %>. This contract is open to members of the Bounty Hunters' Guild to sign and execute.</h3>
 <h2> 
+
+<%= button_to 'Sign up for this bounty', new_hunter_contract_path, method: :get%> <br>
 
 <h1>This contract currently has the following signors:</h1>
 <h1><% @contract.hunters.each do |hunter| %>

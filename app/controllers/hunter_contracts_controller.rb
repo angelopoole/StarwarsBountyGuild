@@ -3,6 +3,7 @@ class HunterContractsController < ApplicationController
 #fhgerijfbnfsob
     def new 
         @hunter_contract = HunterContract.new
+        @contract = Contract.find(params[:id])
     end
 
     def create
