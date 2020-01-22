@@ -1,12 +1,14 @@
-<h1>Bounty Activity</h1>
+<h1 center>Bounty Activity</h1>
 
-<div>
-<% HunterContract.last(25).each do |list| %>
-<div id="box">
-<%= link_to list.hunter.name, hunter_path(list.hunter.id) %> 
-has accepted a contract in the amount of <%=list.contract.BountyAmount %> against 
-
-<%= link_to list.contract.name, contract_path(list.contract.id) %>
-</div>
+<div id="container-of-box">
+    <% HunterContract.(20).each do |list| %>
+<%# <div id="box"> %>
+    <ul>
+        <li>
+        <%= link_to list.hunter.name, hunter_path(list.hunter.id) %> has accepted a contract in the amount of <%=list.contract.BountyAmount %> against 
+        <%= link_to list.contract.name, contract_path(list.contract.id) %>
+        </li>
+    </ul>
+<%# </div> %>
 <% end %>
 </div>

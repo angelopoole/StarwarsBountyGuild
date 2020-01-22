@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+ ul li {
+    display: inline-block;
+    padding: 20px;
+    color: black;
+    /* align: center; */
+  }
+  
+  li:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+  transition-duration: 1s;
+  }
+  
+  ul {
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    max-width: 960px;
+    /* padding: 1.25%;  */
+    width: 85%;
+    
+    /* font-family: molle; */
+    /* text-align: center; */
+    vertical-align: middle;
+    border-radius: 20px;
+  }
+  body {
+      background-image: url(starwarsBounties.jpeg);
+      background-position: center;
+  }
