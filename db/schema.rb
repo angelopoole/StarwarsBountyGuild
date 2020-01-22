@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_21_194537) do
+ActiveRecord::Schema.define(version: 2020_01_22_155624) do
 
   create_table "contracts", force: :cascade do |t|
     t.string "name"
     t.integer "BountyAmount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "drafter"
   end
 
   create_table "hunter_contracts", force: :cascade do |t|
