@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+ ul li {
+    display: inline-block;
+    padding: 20px;
+    color: black;
+    /* align: center; */
+  }
+  
+  li:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+  transition-duration: 1s;
+  }
+  
+  ul {
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    max-width: 960px;
+    /* padding: 1.25%;  */
+    width: 85%;
+    
+    /* font-family: molle; */
+    /* text-align: center; */
+    vertical-align: middle;
+    border-radius: 20px;
+  }
+  body {
+      /* background-image: url(https://us.123rf.com/450wm/sudowoodo/sudowoodo1606/sudowoodo160600027/58944604-seamless-star-pattern-silver-and-golden-stars-on-black-background-tile-able-texture-.jpg?ver=6); */
+      background-image: url(https://ih1.redbubble.net/image.597565382.3277/flat,1000x1000,075,f.jpg);
+      background-position: center;
+      background-repeat: inherit;
+  }

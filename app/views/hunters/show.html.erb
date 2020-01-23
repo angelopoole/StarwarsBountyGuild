@@ -18,6 +18,4 @@ Number of contracts failed: <%= @hunter.contracts_failed%>
 
 </p>
 <%= button_to 'Edit your profile', edit_hunter_path(@hunter), method: :get%> <br>
-<%= button_to 'Delete Yourself', hunter_path(@hunter), method: :delete %><br>
-
-
+<%= button_to 'Delete Yourself', hunter_path(@hunter), method: :delete, confirm: "are you sure?" %><br>
