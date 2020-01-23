@@ -7,15 +7,38 @@ class HuntersController < ApplicationController
 
     def create
     @hunter = Hunter.create(hunter_params)
-    redirect_to hunter_path(@hunter.id)
+    if @hunter.is_valid?
+        session[:hunter_id] = @hunter.id
+        redirect_to hunter_path(@hunter.id)
+    else
+        flash[:errors] = @hunter.errors.full_messages
+        redirect_to new_hunter_path
+    end
+    end
+
+    def login
+
+    end
+
+    def create_login_session
+        hunter = Hunter.find_by(name: params[:session][:name])
+        if hunter && hunter.authenticate(params[:session][:password])
+            session[:hunter_id] = hunter.id
+            redirect_to hunter_path(hunter.id)
+        else
+            flash[:errors] = ["That login information is not correct"]
+            redirect_to login_path
+        end
+    end
+
+    def logout
+
     end
     
     def edit
-        
     end
 
     def show
-        
     end
 
     def update
@@ -35,7 +58,7 @@ class HuntersController < ApplicationController
     end
 
     def hunter_params
-        params.require(:hunter).permit(:name, :planet, :species, :quote)
+        params.require(:hunter).permit(:name, :planet, :species, :quote, :password)
     end
 
 end

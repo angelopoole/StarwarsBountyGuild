@@ -3,12 +3,11 @@ class HunterContractsController < ApplicationController
 #fhgerijfbnfsob
     def new 
         @hunter_contract = HunterContract.new
-        @contract = Contract.find(params[:id])
     end
 
     def create
-        @hunter_contract = HunterContract.create
-        redirect_to contract_path(@hunter_contract.contract)
+        @hunter_contract = HunterContract.create(hunter_contract_params)
+        redirect_to contract_path(@hunter_contract.contract_id)
     end
 
     def destroy
@@ -26,5 +25,9 @@ class HunterContractsController < ApplicationController
     
     def find_hunter_contract
         @hunter_contract = HunterContract.find(params[:id])
+    end
+
+    def hunter_contract_params
+        params.require(:hunter_contract).permit(:hunter_id, :contract_id)
     end
 end

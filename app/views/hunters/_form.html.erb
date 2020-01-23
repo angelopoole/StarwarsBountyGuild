@@ -2,11 +2,13 @@
 <%= form_for @hunter do |f| %>
   <%= f.label 'name' %>
   <%= f.text_field :name %>
+  <%= f.label 'password' %>
+  <%= f.password_field :password %>
   <%= f.label 'planet' %>
   <%= f.text_field :planet %>
   <%= f.label 'species' %>
   <%= f.text_field :species %>
-  <%= f.label :quote%>
-  <%= f.text_field :quote%>
+  <%= f.label 'quote' %>
+  <%= f.text_field :quote %>
   <%= f.submit %>
 <% end %>

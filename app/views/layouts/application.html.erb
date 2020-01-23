@@ -11,9 +11,15 @@
 
   <body>
     <ul>
-        <li><%= link_to 'User Home', root_path %></li>
-        <%# <li><%= link_to 'Movie Home', movies_path </li> %>
-        <%# <li><%= link_to 'New Movie', new_movie_path </li> %>
+        <li><%= link_to 'Bounty List', contracts_path %></li>
+        <li><%= link_to 'Bounty Activity', root_path %></li>
+        <% if @logged_in_hunter %>
+        <li><%= link_to 'Log-Out', new_hunter_path %></li>
+        <li>Welcome, <%= @logged_in_hunter.name %></li>
+        <%else%>
+        <li><%= link_to 'Sign-Up', new_hunter_path %></li>
+        <li><%= link_to 'Log-In', login_path %></li>
+        <%end%>
     </ul>
     <%= yield %>
   </body>
