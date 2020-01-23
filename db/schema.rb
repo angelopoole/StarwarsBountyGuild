@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2020_01_22_155624) do
     t.string "planet"
     t.string "species"
     t.string "quote"
-    t.integer "contracts_completed"
-    t.integer "contracts_failed"
+    t.integer "contracts_completed", default: 0
+    t.integer "contracts_failed", default: 0
   end
 
 end

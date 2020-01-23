@@ -1,5 +1,5 @@
 <h1>Bounty Activity</h1>
 
-<% HunterContract.last(25).each do |list| %>
+<% HunterContract.last(25).uniq.each do |list| %>
 <p><%= link_to list.hunter.name, hunter_path(list.hunter.id) %> has accepted a contract in the amount of <%=list.contract.BountyAmount %> against <%= link_to list.contract.name, contract_path(list.contract.id) %></p>
 <% end %>
