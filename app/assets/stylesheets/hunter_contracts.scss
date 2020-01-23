@@ -1,12 +1,16 @@
 // Place all the styles related to the HunterContracts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body{
+  // font-family: 'Share Tech Mono', monospace;
+}
+
 #container-of-box {
-  // display: inline-block;
-background-color: red;
-// opacity: 0.2;
-filter: alpha(opacity=60);
-border-radius: 20px;
+  background-color: black;
+  filter: alpha(opacity=60);
+  border-radius: 20px;
+  border-style: double;
+  border-color: turquoise;
 }
 p {
       
@@ -16,8 +20,11 @@ p {
       // /* background-color: rgb(241, 233, 233); */
       rotate: right;
       text-align: center;
-      
-
-      
       // align-content: center;
   }
+h1{
+  text-align: center;
+  color: turquoise;
+}
+  
+  

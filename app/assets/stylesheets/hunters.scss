@@ -1,3 +1,23 @@
 // Place all the styles related to the Hunters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+p {
+    background-color: black;
+    font-weight: bolder;
+    font-size: large;
+    rotate: right;
+    text-align: center;
+    color: turquoise;
+    border: double;
+    border-color: turquoise;
+    border-width: 37px;
+}
+
+.buttons {
+    background-color: beige;
+    /* align-content: center; */
+    /* align-self: center; */
+    display: inline-flex;
+    display: flex;
+    font-size: 50px;
+}
