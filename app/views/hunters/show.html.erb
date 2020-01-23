@@ -8,8 +8,8 @@ Number of contracts completed: <%= @hunter.contracts_completed%><br>
 Number of contracts failed: <%= @hunter.contracts_failed%>
 
 <h5>This Hunter is feuding with:</h5>
-<% @hunter.contracts.each do |feud| %>
-<% feud.hunters.each do |huntername| %>
+<% @hunter.contracts.uniq.each do |feud| %>
+<% feud.hunters.uniq.each do |huntername| %>
 <% if @hunter.name != huntername.name %>
 <%= link_to huntername.name, hunter_path(huntername.id) %><br>
 <%end%>
@@ -17,5 +17,7 @@ Number of contracts failed: <%= @hunter.contracts_failed%>
 <%end%>
 
 </p>
+<div class="buttons">
 <%= button_to 'Edit your profile', edit_hunter_path(@hunter), method: :get%> <br>
 <%= button_to 'Delete Yourself', hunter_path(@hunter), method: :delete, confirm: "are you sure?" %><br>
+</div>
