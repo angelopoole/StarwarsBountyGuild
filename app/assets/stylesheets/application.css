@@ -1,28 +1,47 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- ul li {
-    display: inline-block;
-    padding: 20px;
-    color: black;
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+*{
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  /* background-image: url(https://us.123rf.com/450wm/sudowoodo/sudowoodo1606/sudowoodo160600027/58944604-seamless-star-pattern-silver-and-golden-stars-on-black-background-tile-able-texture-.jpg?ver=6); */
+  /* background-image: url(https://ih1.redbubble.net/image.597565382.3277/flat,1000x1000,075,f.jpg); */
+  
+  background-color: black;
+  /* font-family: 'Inconsolata', sans-serif; */
+  background-position: center;
+  background-repeat: inherit;
+}
+ 
+                              ul li {
+  display: inline-block;
+  padding: 20px;
+  color: turquoise;
     /* align: center; */
   }
   
   li:hover {
-  background-color: rgba(255, 0, 0, 0.5);
-  transition-duration: 1s;
+  /* background-color: rgba(255, 0, 0, 0.5); */
+  border-style: double;
+  border-color: turquoise;
+  background-color: rgb(36, 36, 36);
+  transition-duration: 0.3s;
+  transition
   }
   
   ul {
@@ -38,10 +57,4 @@
     /* text-align: center; */
     vertical-align: middle;
     border-radius: 20px;
-  }
-  body {
-      /* background-image: url(https://us.123rf.com/450wm/sudowoodo/sudowoodo1606/sudowoodo160600027/58944604-seamless-star-pattern-silver-and-golden-stars-on-black-background-tile-able-texture-.jpg?ver=6); */
-      background-image: url(https://ih1.redbubble.net/image.597565382.3277/flat,1000x1000,075,f.jpg);
-      background-position: center;
-      background-repeat: inherit;
   }

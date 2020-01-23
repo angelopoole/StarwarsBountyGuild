@@ -1,4 +1,7 @@
 <h1> Bounty Sign </h1>
+<%# <% byebug %>
+<h2>Target: <%=@contract.name%></h2>
+
 <%= form_for @hunter_contract do |f| %>
 <%= f.label "Select who is signing for this bounty"%>
 <%= f.collection_select :hunter_id, Hunter.all, :id, :name %>
