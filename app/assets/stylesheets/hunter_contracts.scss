@@ -1,6 +1,14 @@
 // Place all the styles related to the HunterContracts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.ul_li{
+  background-color: black;
+  // text-align: left;
+  align-content: left;
+}
+
+
 body{
   // font-family: 'Share Tech Mono', monospace;
 }
@@ -28,3 +36,17 @@ h1{
 }
   
   
+.hunterName {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.contractName{
+  color: tomato;
+  text-decoration: none;
+
+}
+
+.bountyAmount{
+  color: green;
+}
