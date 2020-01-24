@@ -1,18 +1,21 @@
 class HunterContractsController < ApplicationController
     before_action :find_hunter_contract, only: [:destroy]
-#fhgerijfbnfsob
+    skip_before_action :authorize
+
     def new 
-        @hunter_contract = HunterContract.new
+
     end
 
     def create
-        @hunter_contract = HunterContract.create(hunter_contract_params)
-        redirect_to contract_path(@hunter_contract.contract_id)
+        hunter = HunterContract.create(hunter_id: @logged_in_hunter.id, contract_id: params[:contract_id])
+        # @hunter_contract = HunterContract.create(hunter_contract_params)
+        redirect_to contract_path(hunter.contract_id)
     end
 
     def destroy
         find_hunter_contract.destroy
-        redirect_to contracts_path
+        #byebug
+        redirect_to hunter_path(@logged_in_hunter.id)
     end
 
     def index

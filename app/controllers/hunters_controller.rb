@@ -1,13 +1,16 @@
 class HuntersController < ApplicationController
-    before_action :find_hunter, only: [:show, :edit, :update, :destroy]
-
+    before_action :find_hunter, only: [:show, :edit, :update, :destroy, :login_form]
+    skip_before_action :authorize, only: [:new, :create, :login, :create_login_session]
+    # skip_before_action :authorize
+    
+    
     def new
     @hunter = Hunter.new
     end
 
     def create
     @hunter = Hunter.create(hunter_params)
-    if @hunter.is_valid?
+    if @hunter.valid?
         session[:hunter_id] = @hunter.id
         redirect_to hunter_path(@hunter.id)
     else
@@ -17,7 +20,7 @@ class HuntersController < ApplicationController
     end
 
     def login
-
+        # render :login
     end
 
     def create_login_session
@@ -32,7 +35,8 @@ class HuntersController < ApplicationController
     end
 
     def logout
-
+        session[:hunter_id] = nil
+        redirect_to hunter_contracts_path
     end
     
     def edit

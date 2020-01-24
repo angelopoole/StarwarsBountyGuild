@@ -7,6 +7,13 @@ Species: <%= @hunter.species%><br>
 Number of contracts completed: <%= @hunter.contracts_completed%><br>
 Number of contracts failed: <%= @hunter.contracts_failed%>
 
+<h4>Contracts accepted by this hunter:<h4>
+<% @hunter.contracts.reverse.each do |contractslist| %>
+<%#byebug%>
+ <%= link_to contractslist.name, contract_path(contractslist.id) %>, Value: <%= contractslist.BountyAmount %>
+<br>
+ <%end%>
+
 <h5>This Hunter is feuding with:</h5>
 <% @hunter.contracts.uniq.each do |feud| %>
 <% feud.hunters.uniq.each do |huntername| %>
@@ -18,6 +25,9 @@ Number of contracts failed: <%= @hunter.contracts_failed%>
 
 </p>
 <div class="buttons">
-<%= button_to 'Edit your profile', edit_hunter_path(@hunter), method: :get%> <br>
-<%= button_to 'Delete Yourself', hunter_path(@hunter), method: :delete, confirm: "are you sure?" %><br>
+<% if @logged_in_hunter == @hunter%>
+<%= button_to 'Edit your hunter profile', edit_hunter_path(@hunter), method: :get%> <br>
+<%= button_to 'Leave the Guild', hunter_path(@hunter), method: :delete, confirm: "Are you sure? Re-Admission may take a long time." %><br>
+<%else%>
+<%end%>
 </div>

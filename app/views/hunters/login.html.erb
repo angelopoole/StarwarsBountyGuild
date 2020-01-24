@@ -1,12 +1,12 @@
 <% if flash[:errors] %>
-<% flash[:errors].each do|error| %>
-<%= error %>
-<%end%>
+    <% flash[:errors].each do|error| %>
+        <%= error %>
+    <%end%>
 <%end%>
 
 
 <h1>Log-In as a hunter</h1>
-<%= form_for :hunter, url: login_path do |f| %>
+<%= form_for :session, url: create_login_session_path do |f| %>
   <%= f.label 'name' %>
   <%= f.text_field :name %>
   <%= f.label 'password' %>

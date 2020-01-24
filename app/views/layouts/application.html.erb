@@ -16,8 +16,9 @@
         <li><%= link_to 'Bounty List', contracts_path %></li>
         <li><%= link_to 'Bounty Activity', root_path %></li>
         <% if @logged_in_hunter %>
-        <li><%= link_to 'Log-Out', new_hunter_path %></li>
-        <li>Welcome, <%= @logged_in_hunter.name %></li>
+        <li><%= link_to 'Log-Out', logout_path, :method => 'delete' %></li>
+        <li>Welcome, <%= link_to @logged_in_hunter.name, hunter_path(@logged_in_hunter.id) %></li>
+        <%# link_to huntername.name, hunter_path(huntername.id) %>
         <%else%>
         <li><%= link_to 'Sign-Up', new_hunter_path %></li>
         <li><%= link_to 'Log-In', login_path %></li>
