@@ -1,6 +1,12 @@
 <h1> Official Posting of the Bounty Guild </h1>
 <h3> By the authority of the New Republic, this contract is deemed open and legal as released from the Bounty Hunters' Guild. The drafter of this contract, <%= @contract.drafter %> has posted a reward in the amount of <%= @contract.BountyAmount %> against <%= @contract.name %>. This contract is open to members of the Bounty Hunters' Guild to sign and execute.</h3>
 
+<h2> Target Information </h2>
+<%= image_tag("#{@contract.image_url}", :alt => "#{@contract.name}") %>
+<ul>Name: <%=@contract.name%></ul>
+<ul>Species: <%=@contract.species%></ul>
+<ul>Last seen: <%=@contract.last_seen%></ul>
+
 <% if @logged_in_hunter.contracts.ids.find_index(@contract.id) %>
 <h3> You have already accepted this contract </h3><br>
 <%else%>

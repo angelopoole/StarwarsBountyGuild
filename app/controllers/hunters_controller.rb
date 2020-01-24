@@ -47,7 +47,8 @@ class HuntersController < ApplicationController
 
     def update
         @hunter.update(hunter_params)
-        redirect_to hunter_path(@hunter)
+         redirect_to hunter_path(@hunter)
+
     end
 
     def destroy
@@ -62,7 +63,7 @@ class HuntersController < ApplicationController
     end
 
     def hunter_params
-        params.require(:hunter).permit(:name, :planet, :species, :quote, :password)
+        params.require(:hunter).permit(:name, :planet, :species, :quote, :image_url, :password)
     end
 
 end
