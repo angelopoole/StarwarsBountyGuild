@@ -11,13 +11,13 @@ HunterContract.destroy_all
 Faker::UniqueGenerator.clear
 
 20.times do
-   h = Hunter.create(name: Faker::Movies::StarWars.unique.character, password: Faker::Game.title, planet: Faker::Movies::StarWars.planet, species: Faker::Movies::StarWars.specie, quote: Faker::Movies::StarWars.quote)
+   h = Hunter.create(name: Faker::Movies::StarWars.unique.character, image_url: Faker::Avatar.unique.image, password: Faker::Game.title, planet: Faker::Movies::StarWars.planet, species: Faker::Movies::StarWars.specie, quote: Faker::Movies::StarWars.quote)
     h.update(contracts_completed: rand(0...30), contracts_failed: rand(0...30))
 end
 
 
 20.times do
-    Contract.create(name: Faker::Movies::StarWars.unique.character, BountyAmount: rand(500...100000), drafter: Faker::Movies::StarWars.droid)
+    Contract.create(species: Faker::Movies::StarWars.specie, last_seen: Faker::Movies::StarWars.planet, name: Faker::Movies::StarWars.unique.character, image_url: Faker::Avatar.unique.image, BountyAmount: rand(500...100000), drafter: Faker::Movies::StarWars.droid)
  end
 
 

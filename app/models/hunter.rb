@@ -4,7 +4,7 @@ class Hunter < ApplicationRecord
 
     validates :name, uniqueness: true
     validates :name, presence: true
-    validates :password, presence: true
+    # validates :password, presence: true
 
     has_secure_password
 
