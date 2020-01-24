@@ -1,12 +1,17 @@
-
+<div class=form>
 <%= form_for @hunter do |f| %>
-  <%= f.label 'name' %>
-  <%= f.text_field :name %>
-  <%= f.label 'planet' %>
-  <%= f.text_field :planet %>
-  <%= f.label 'species' %>
-  <%= f.text_field :species %>
-  <%= f.label :quote%>
-  <%= f.text_field :quote%>
-  <%= f.submit %>
+  <li class= form_li><%= f.label 'name' %>
+  <%= f.text_field :name %></li>
+  <li class= form_li><%= f.label 'password' %>
+  <%= f.password_field :password %></li>
+  <li class= form_li><%= f.label 'planet' %>
+  <%= f.text_field :planet %></li>
+  <li class= form_li><%= f.label 'species' %>
+  <%= f.text_field :species %></li>
+  <li class= form_li><%= f.label 'quote' %>
+  <%= f.text_field :quote %></li>
+  <li class= form_li><%= f.label 'image_url'%>
+  <%= f.text_field :image_url %> </li>
+  <li class= form_li><%= f.submit %></li>
 <% end %>
+</div>

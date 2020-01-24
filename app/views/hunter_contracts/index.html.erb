@@ -8,25 +8,18 @@
 
 
 <div id="container-of-box">
-    <% HunterContract.last(25).each do |list| %>
+    <% HunterContract.last(25).reverse.each do |list| %>
 <%# <div id="box"> %>
 
     <ul id="ul_box">
         <li class="ul_li">
-<%# <%byebug%> 
-<div class="ring-container">
-    <div class="ringring"></div>
-    <div class="circle"></div>
-</div>
-
-
-        <%= link_to list.hunter.name, hunter_path(list.hunter.id) %>
+        <%= link_to list.hunter.name, hunter_path(list.hunter.id), {class:'hunterName'} %>
          has accepted a contract in the amount of 
-         <%=list.contract.BountyAmount %>
+         <span class= bountyAmount><%=list.contract.BountyAmount %></span>
          against 
-        <%= link_to list.contract.name, contract_path(list.contract.id) %>
+        <%= link_to list.contract.name, contract_path(list.contract.id), {class:'contractName'} %>
         </li>
     </ul>
-<%# </div> %>
+
 <% end %>
 </div>
