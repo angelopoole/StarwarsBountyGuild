@@ -2,12 +2,12 @@
 <p>
 
 <%= image_tag("#{@hunter.image_url}", :alt => "#{@hunter.name}") %>
-Name: <%= @hunter.name%><br>
+Name:  <span class=hunterName> <%= @hunter.name %> </span> <br>
 Quote: <%= @hunter.quote%><br>
 Planet: <%= @hunter.planet%><br>
 Species: <%= @hunter.species%><br>
-Number of contracts completed: <%= @hunter.contracts_completed%><br>
-Number of contracts failed: <%= @hunter.contracts_failed%>
+Number of contracts completed: <span style=color:gold><%= @hunter.contracts_completed%></span><br>
+Number of contracts failed: <span style=color:red><%= @hunter.contracts_failed%></span>
 
 <h4>Contracts accepted by this hunter:<h4>
 <% @hunter.contracts.reverse.each do |contractslist| %>
@@ -28,8 +28,11 @@ Number of contracts failed: <%= @hunter.contracts_failed%>
 </p>
 <div class="buttons">
 <% if @logged_in_hunter == @hunter%>
-<%= button_to 'Edit your hunter profile', edit_hunter_path(@hunter), method: :get%> <br>
-<%= button_to 'Leave the Guild', hunter_path(@hunter), method: :delete, confirm: "Are you sure? Re-Admission may take a long time." %><br>
+<%= button_to 'Edit your hunter profile', edit_hunter_path(@hunter), method: :get%> 
+<%= button_to 'Leave the Guild', hunter_path(@hunter), method: :delete %><br>
 <%else%>
 <%end%>
+
+
+
 </div>
