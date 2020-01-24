@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_22_155624) do
+ActiveRecord::Schema.define(version: 2020_01_23_205752) do
 
   create_table "contracts", force: :cascade do |t|
     t.string "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_01_22_155624) do
     t.string "quote"
     t.integer "contracts_completed", default: 0
     t.integer "contracts_failed", default: 0
+    t.string "password_digest"
   end
 
 end

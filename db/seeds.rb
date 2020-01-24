@@ -11,7 +11,7 @@ HunterContract.destroy_all
 Faker::UniqueGenerator.clear
 
 20.times do
-   h = Hunter.create(name: Faker::Movies::StarWars.unique.character, planet: Faker::Movies::StarWars.planet, species: Faker::Movies::StarWars.specie, quote: Faker::Movies::StarWars.quote)
+   h = Hunter.create(name: Faker::Movies::StarWars.unique.character, password: Faker::Game.title, planet: Faker::Movies::StarWars.planet, species: Faker::Movies::StarWars.specie, quote: Faker::Movies::StarWars.quote)
     h.update(contracts_completed: rand(0...30), contracts_failed: rand(0...30))
 end
 
