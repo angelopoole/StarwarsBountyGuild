@@ -29,12 +29,12 @@ body {
   background-repeat: inherit;
 }
  
-                              ul li {
+ul li {
   display: inline-block;
   padding: 20px;
   color: turquoise;
     /* align: center; */
-  }
+}
   
   li:hover {
   /* background-color: rgba(255, 0, 0, 0.5); */

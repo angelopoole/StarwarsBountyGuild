@@ -13,6 +13,31 @@ p {
     border-width: 37px;
 }
 
+.form_li:hover{
+
+}
+
+.form {
+    display: grid;
+    text-align: center;
+    padding: 40px;
+}
+@keyframes .login {
+    from {border-color: turquoise;}
+    to {border-color: red;}
+}
+
+
+.login {
+    align-content: center;
+    border-style: double;
+    
+    border-color: turquoise;
+    padding: 40px;
+
+}
+
+
 .buttons {
     background-color: beige;
     /* align-content: center; */
