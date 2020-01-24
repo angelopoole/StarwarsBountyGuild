@@ -1,37 +1,50 @@
 <h1> Hunter stats:</h1>
-<p>
+<div>
+<div class="bio">
+<span class=imga><%= image_tag("#{@hunter.image_url}", :alt => "#{@hunter.name}") %></span>
 
-<%= image_tag("#{@hunter.image_url}", :alt => "#{@hunter.name}") %>
-Name:  <span class=hunterName> <%= @hunter.name %> </span> <br>
-Quote: <%= @hunter.quote%><br>
-Planet: <%= @hunter.planet%><br>
-Species: <%= @hunter.species%><br>
-Number of contracts completed: <span style=color:gold><%= @hunter.contracts_completed%></span><br>
-Number of contracts failed: <span style=color:red><%= @hunter.contracts_failed%></span>
+    <div class='info'>
+        Name:  <span class=hunterName> <%= @hunter.name %> </span> <br>
+        Quote: <%= @hunter.quote%><br>
+        Planet: <%= @hunter.planet%><br>
+        Species: <%= @hunter.species%><br>
+        Number of contracts completed: <span style=color:gold><%= @hunter.contracts_completed%></span><br>
+        Number of contracts failed: <span style=color:red><%= @hunter.contracts_failed%></span>
+    </div>
 
-<h4>Contracts accepted by this hunter:<h4>
-<% @hunter.contracts.reverse.each do |contractslist| %>
-<%#byebug%>
- <%= link_to contractslist.name, contract_path(contractslist.id) %>, Value: <%= contractslist.BountyAmount %>
-<br>
- <%end%>
 
-<h5>This Hunter is feuding with:</h5>
-<% @hunter.contracts.uniq.each do |feud| %>
-<% feud.hunters.uniq.each do |huntername| %>
-<% if @hunter.name != huntername.name %>
-<%= link_to huntername.name, hunter_path(huntername.id) %><br>
-<%end%>
-<%end%>
-<%end%>
 
-</p>
+<div class='contracts'>
+    <h4>Contracts accepted by this hunter:<h4>
+    <ul>
+        <% @hunter.contracts.reverse.each do |contractslist| %>
+        <%#byebug%>
+       <li> <%= link_to contractslist.name, contract_path(contractslist.id) %>, Value: <%= contractslist.BountyAmount %></li>
+        <br>
+        <%end%>
+    </ul>
+ </div>
+
+
+<div class='fueding'>
+    <h5>This Hunter is feuding with:</h5>
+    <% @hunter.contracts.uniq.each do |feud| %>
+    <% feud.hunters.uniq.each do |huntername| %>
+    <% if @hunter.name != huntername.name %>
+    <%= link_to huntername.name, hunter_path(huntername.id) %><br>
+    <%end%>
+    <%end%>
+    <%end%>
+</div>
+
+</div>
 <div class="buttons">
 <% if @logged_in_hunter == @hunter%>
 <%= button_to 'Edit your hunter profile', edit_hunter_path(@hunter), method: :get%> 
 <%= button_to 'Leave the Guild', hunter_path(@hunter), method: :delete %><br>
 <%else%>
 <%end%>
+
 
 
 

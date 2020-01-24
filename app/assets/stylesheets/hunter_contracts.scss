@@ -1,6 +1,9 @@
 // Place all the styles related to the HunterContracts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+img{
+  height: 400px;
+}
 
 .ul_li{
   background-color: black;
@@ -49,4 +52,31 @@ h1{
 
 .bountyAmount{
   color: green;
+}
+
+.bio{
+  display: flex;
+  flex-flow: row wrap;
+  width: auto;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+
+.info {
+  background-color: black;
+  padding: 30px;
+  border: 15px turquoise double;
+}
+
+.contracts {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 10px;
+}
+
+.fueding{
+  display: flex;
+  flex-flow: column wrap;
+  margin: 10px;
 }

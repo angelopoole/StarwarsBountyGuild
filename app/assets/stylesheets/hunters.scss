@@ -21,6 +21,7 @@ p {
     display: grid;
     text-align: center;
     padding: 40px;
+    // color: black;
 }
 @keyframes .login {
     from {border-color: turquoise;}
@@ -40,6 +41,13 @@ p {
 
 .buttons {
     background-color: black;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 10px;
     /* align-content: center; */
     /* align-self: center; */
+}
+
+.btn {
+    background-color: black;
 }
