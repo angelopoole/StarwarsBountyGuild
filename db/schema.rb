@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_01_24_184819) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "contracts", force: :cascade do |t|
     t.string "name"
     t.integer "BountyAmount"
