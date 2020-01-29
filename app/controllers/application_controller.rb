@@ -18,3 +18,6 @@ class ApplicationController < ActionController::Base
         end
     end
 end
+
+
+# There is an issue here when hosting to a website here where hunter_id is notdefined as a relation
